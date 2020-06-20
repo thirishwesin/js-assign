@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS-Digital Clock</title>
+	<script>
+		function startTime() {
+			now = new Date();
+			h = now.getHours();
+			m = now.getMinutes();
+			s = now.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('clock').innerHTML =
+			h + ":" + m + ":" + s;
+			t = setTimeout(startTime, 1000);
+		}
+		function checkTime(i) {
+  				if (i < 10) {
+  					i = "0" + i
+  				};  
+  				return i;
+  			}
+  		</script>
+  		<style type="text/css">
+  			div{
+  				text-align: center;
+  				padding: 300px;
+  				font-size: 100px;
+  				background-color: grey;
+  			}
+  		</style>
+  	</head>
+
+  	<body onload="startTime()">
+
+  		<div id="clock"></div>
+
+  	</body>
+  	</html>
